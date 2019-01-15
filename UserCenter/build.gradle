@@ -30,6 +30,7 @@ android {
         }
     }
 
+    /*判断UserCneter 是否是library还是application，每个模块都要类似的判断*/
     sourceSets {
         main {
             if (isUserModule.toBoolean()) {
@@ -44,6 +45,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
