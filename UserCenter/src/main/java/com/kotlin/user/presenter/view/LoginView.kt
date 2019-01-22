@@ -6,7 +6,7 @@ import com.kotlin.user.data.protocol.LoginBean
 /**
  * 用户注册 视图回调
  */
-interface RegisterView : BaseView {
+interface LoginView : BaseView {
 
-    fun onRegisterResult(bean:LoginBean)
+    fun onLoginResult(bean:LoginBean)
 }

@@ -14,30 +14,14 @@
                       android:paddingLeft="@dimen/common_padding_small"
                       android:layout_width="0dp"
                       android:layout_height="@dimen/common_line_height"
-                      android:hint="请输入手机号码"
+                      android:hint="用户名"
                       android:drawableLeft="@drawable/icon_phone"
                       android:drawablePadding="@dimen/common_padding_small"
                       android:layout_weight="1.0"
                       android:inputType="phone"/>
             <View style="@style/DividerFixedWidth.MarginTopBottom"/>
-            <Button
-                    android:id="@+id/mVerifyCodeBtn"
-                    style="@style/WrapMatch"
-                    android:textColor="@color/common_blue"
-                    android:background="@null"
-                    android:text="获取验证码"/>
+
         </LinearLayout>
-        <View style="@style/DividerFixedHeight"/>
-        <EditText android:id="@+id/mVerifyCodeEt"
-                  android:background="@null"
-                  android:paddingLeft="@dimen/common_padding_small"
-                  android:layout_width="match_parent"
-                  android:layout_height="@dimen/common_line_height"
-                  android:hint="请输入短信验证码"
-                  android:drawableLeft="@drawable/icon_verify_code"
-                  android:drawablePadding="@dimen/common_padding_small"
-                  android:inputType="number"
-        />
         <View style="@style/DividerFixedHeight"/>
         <EditText android:id="@+id/mPwdEt"
                   android:background="@null"

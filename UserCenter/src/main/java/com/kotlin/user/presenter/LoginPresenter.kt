@@ -1,33 +1,27 @@
 package com.kotlin.user.presenter
 
 import com.kotlin.base.data.net.RetrofitFactory
+import com.kotlin.base.data.protocol.BaseResp
 import com.kotlin.base.presenter.BasePresenter
 import com.kotlin.user.data.api.UserApi
-import com.kotlin.user.presenter.view.RegisterView
+import com.kotlin.user.data.protocol.LoginBean
+import com.kotlin.user.presenter.view.LoginView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class RegisterPresenter : BasePresenter<RegisterView>() {
+class LoginPresenter : BasePresenter<LoginView>() {
 
 
-
-    fun register(username: String, password: String, repassword: String) {
-        //业务逻辑
-
-
+    fun register(username: String, password: String) {
 
         RetrofitFactory.instance.create(UserApi::class.java)
-            .register(username, password, repassword)
+            .login(username, password)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
-                if (it.errorCode!=0){
+            .subscribe({
+                mView.onLoginResult(it.data)
+            })
 
-                }else{
-                    mView.onRegisterResult(it.data)
-                }
-
-            }
 
     }
 }
